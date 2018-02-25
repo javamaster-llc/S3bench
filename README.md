@@ -11,18 +11,18 @@ mvn clean install
 
 ###### UPLOAD of n randomly generated files (key = UUID), each 2kB size
 ```
-java -jar target/s3pt.jar --accessKey <accessKey> --secretKey <secretKey> --bucketName <bucketName> -n <number of files to upload> -s 2048
+java -jar target/s3bench.jar --accessKey <accessKey> --secretKey <secretKey> --bucketName <bucketName> -n <number of files to upload> -s 2048
 ```
 
 ###### RANDOM_READ with 4 parallel threads, each 10.000 reads = 40.000 requests
 ```
-java -jar target/s3pt.jar --accessKey <accessKey> --secretKey <secretKey> --bucketName <bucketName> --operation=RANDOM_READ -n 10000 -t 4
+java -jar target/s3bench.jar --accessKey <accessKey> --secretKey <secretKey> --bucketName <bucketName> --operation=RANDOM_READ -n 10000 -t 4
 ```
 
 ###### General usage:
 
 ```
-java -jar s3pt.jar [options...]
+java -jar s3bench.jar [options...]
  --accessKey VAL      : access key ID; also possible to set AWS_ACCESS_KEY int
                         environment
  --bucketName VAL     : name of bucket
@@ -44,4 +44,4 @@ java -jar s3pt.jar [options...]
  -t (--threads) N     : number of threads (default: 1)
 ```
 
-To print the usage information execute `java -jar target/s3pt.jar` on the command line.
+To print the usage information execute `java -jar target/s3bench.jar` on the command line.
